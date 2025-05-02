@@ -146,8 +146,8 @@
 
     // every ~ 20 seconds
     if (
-      idleTime > 10 &&
-      Math.floor(Math.random() * 200) == 0 &&
+      idleTime > 5 &&
+      Math.floor(Math.random() * 100) == 0 &&
       idleAnimation == null
     ) {
       let availableIdleAnimations = ["sleeping", "scratchSelf"];
@@ -176,7 +176,7 @@
           break;
         }
         setSprite("sleeping", Math.floor(idleAnimationFrame / 4));
-        if (idleAnimationFrame > 192) {
+        if (idleAnimationFrame > 500) {
           resetIdleAnimation();
         }
         break;
@@ -235,6 +235,7 @@
 			  animation: heartBurst 1s ease-out;
 			  animation-fill-mode: forwards;
 			  color: #ab9df2;
+			  user-select: none;
 		  }
 	  `;
 
@@ -247,6 +248,7 @@
     const diffY = nekoPosY - mousePosY;
     const distance = Math.sqrt(diffX ** 2 + diffY ** 2);
 
+    // Don't be so close to the mouse
     if (distance < nekoSpeed || distance < 48) {
       idle();
       return;
@@ -273,6 +275,7 @@
     nekoPosX -= (diffX / distance) * nekoSpeed;
     nekoPosY -= (diffY / distance) * nekoSpeed;
 
+    // Don't get too close to the window edge
     nekoPosX = Math.min(Math.max(16, nekoPosX), window.innerWidth - 16);
     nekoPosY = Math.min(Math.max(16, nekoPosY), window.innerHeight - 16);
 
