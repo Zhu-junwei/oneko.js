@@ -94,7 +94,7 @@
     nekoEl.style.imageRendering = "pixelated";
     nekoEl.style.left = `${nekoPosX - 16}px`;
     nekoEl.style.top = `${nekoPosY - 16}px`;
-    nekoEl.style.zIndex = Number.MAX_VALUE;
+    nekoEl.style.zIndex = 2147483647;
 
     // internet url: "https://cdn.jsdelivr.net/gh/Zhu-junwei/oneko.js/oneko.gif"
     let nekoFile = "https://cdn.jsdelivr.net/gh/Zhu-junwei/oneko.js@main/sakura.gif"
