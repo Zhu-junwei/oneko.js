@@ -97,7 +97,7 @@
     nekoEl.style.zIndex = Number.MAX_VALUE;
 
     // internet url: "https://cdn.jsdelivr.net/gh/Zhu-junwei/oneko.js/oneko.gif"
-    let nekoFile = "./sakura.gif"
+    let nekoFile = "https://cdn.jsdelivr.net/gh/Zhu-junwei/oneko.js@main/sakura.gif"
     const curScript = document.currentScript
     if (curScript && curScript.dataset.cat) {
       nekoFile = curScript.dataset.cat
