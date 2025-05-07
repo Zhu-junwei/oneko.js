@@ -45,6 +45,10 @@
       [-4, 0],
       [-4, -1],
     ],
+    ear: [
+      [-3, -3],
+      [-7, -0],
+    ],
     tired: [[-3, -2]],
     sleeping: [
       [-2, 0],
@@ -171,7 +175,15 @@
 
     switch (idleAnimation) {
       case "sleeping":
-        if (idleAnimationFrame < 8) {
+        if (idleAnimationFrame < 16) {
+          setSprite("ear", idleAnimationFrame);
+          break;
+        }
+        if (idleAnimationFrame < 24) {
+          setSprite("scratchSelf", idleAnimationFrame);
+          break;
+        }
+        if (idleAnimationFrame < 32) {
           setSprite("tired", 0);
           break;
         }
